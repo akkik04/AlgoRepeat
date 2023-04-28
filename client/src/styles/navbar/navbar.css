@@ -15,8 +15,8 @@
 }
 
 .navbar-logo {
-  width: 80px;
-  height: 79px;
+  width: 88px;
+  height: 84px;
   margin-right: 10px;
 }
 
@@ -41,6 +41,7 @@
 .nav-link {
   color: #333;
   text-decoration: none;
+  font-weight: bold;
   padding: 5px;
   border-radius: 5px;
 }
