@@ -4,6 +4,8 @@ import Navbar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
 import EntryPage from './pages/entry/entryPage';
 import About from './pages/about/about';
+import Signup from './pages/signup/signup';
+import Login from './pages/login/login';
 import './App.css';
 
 const App = () =>{
@@ -18,6 +20,16 @@ const App = () =>{
                 <Route exact path="/about">
                     <Navbar />
                     <About />
+                    <Footer />
+                </Route>
+                <Route exact path="/signup">
+                    <Navbar />
+                    <Signup/>
+                    <Footer />
+                </Route>
+                <Route exact path="/login">
+                    <Navbar />
+                    <Login />
                     <Footer />
                 </Route>
           </Switch>

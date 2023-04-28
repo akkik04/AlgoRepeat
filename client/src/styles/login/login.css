@@ -1,0 +1,75 @@
+.login-container {
+    height: 85vh;
+    width: 100%;
+    background-image: url("https://media0.giphy.com/media/2fMPOFQz9vxNHleACr/giphy.gif?cid=ecf05e47k68dja58zyjh4cinqz7edlofwonwu698k05l013s&ep=v1_gifs_search&rid=giphy.gif&ct=g");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.login-form-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 260px;
+}
+  
+.login-form-container h2 {
+    margin-top: 0;
+}
+  
+.login-form-container form {
+    display: flex;
+    flex-direction: column;
+}
+  
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+  
+.input-container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+  
+.input-container input {
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+  
+button[type='submit'] {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+button[type='submit']:hover {
+    background-color: #2980b9;
+}
+
+.signup-link-container span {
+    margin-right: 3px;
+}
+
+.signup-link {
+    color: brightblue;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid #fff;
+    transition: border-bottom
+}
