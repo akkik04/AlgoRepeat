@@ -1,7 +1,7 @@
 // Navbar.js
 import React from 'react';
 import '../../styles/navbar/navbar.css';
-import logo from '../../assets/RepetiPro_Logo.png';
+import logo from '../../assets/REPETIPRO.png';
 
 function Navbar() {
   return (
@@ -10,7 +10,9 @@ function Navbar() {
         <a href='/'>
         <img src={logo} alt="Repetipro Logo" className="navbar-logo" />
         </a>
+        <a href='/'>
         <h1 className="navbar-brand">RepetiPro 🧑‍💻</h1>
+        </a>
       </div>
       <ul className="navbar-right">
         <li className="nav-item">
