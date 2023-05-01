@@ -1,9 +1,8 @@
-// Navbar.js
 import React from 'react';
-import '../../styles/navbar/navbar.css';
+import '../../styles/entryNavbar/entryNavbar.css';
 import logo from '../../assets/REPETIPRO.png';
 
-function Navbar() {
+function EntryNavbar() {
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -29,4 +28,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default EntryNavbar;

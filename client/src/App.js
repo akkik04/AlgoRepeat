@@ -1,11 +1,13 @@
 import React from 'react';
 import{ BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Navbar from './components/navbar/navbar';
+import EntryNavbar from './components/entryNavbar/entryNavbar';
+import DashboardNavbar from './components/dashboardNavbar/dashboardNavbar';
 import Footer from './components/footer/footer';
 import EntryPage from './pages/entry/entryPage';
 import About from './pages/about/about';
 import Signup from './pages/signup/signup';
 import Login from './pages/login/login';
+import Home from './pages/home/home';
 import './App.css';
 
 const App = () =>{
@@ -13,23 +15,28 @@ const App = () =>{
       <Router>
           <Switch>
                 <Route exact path="/">
-                    <Navbar />
+                    <EntryNavbar />
                     <EntryPage />
                     <Footer />
                 </Route>
                 <Route exact path="/about">
-                    <Navbar />
+                    <EntryNavbar />
                     <About />
                     <Footer />
                 </Route>
                 <Route exact path="/signup">
-                    <Navbar />
+                    <EntryNavbar />
                     <Signup/>
                     <Footer />
                 </Route>
                 <Route exact path="/login">
-                    <Navbar />
+                    <EntryNavbar />
                     <Login />
+                    <Footer />
+                </Route>
+                <Route exact path="/home">
+                    <DashboardNavbar />
+                    <Home />
                     <Footer />
                 </Route>
           </Switch>

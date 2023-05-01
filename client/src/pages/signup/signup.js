@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import ErrorBox from '../../components/errorDisplay/errorDisplay';
 import axios from 'axios';
 import '../../styles/signup/signup.css';
 
@@ -21,9 +22,9 @@ function Signup() {
     e.preventDefault();
     try {
       const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/register`, formData);
-      alert("You have successfully registered. Please login to continue");
+      alert("You have successfully registered. Being re-directed to main dashboard.");
       console.log(response.data);
-      history.push('/login'); // redirect to /login on successful registration
+      history.push('/home'); // redirect to /login on successful registration
 
     } catch (error) {
       console.error(error.response.data);
@@ -32,11 +33,15 @@ function Signup() {
     }
   };
 
+  const closeErrorBox = () => {
+    setError(null);
+  };
+
   return (
     <div className="signup-container">
       <div className="signup-form-container">
         <h2>Sign Up</h2>
-        {error && <div className="error-message">{error}</div>}
+        {error && <ErrorBox message={error} onClose={closeErrorBox} />}
         {message && <div className="success-message">{message}</div>}
         <form onSubmit={handleSubmit}>
           <div className="input-container">

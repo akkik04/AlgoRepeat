@@ -30,7 +30,7 @@ function EntryPage() {
         {header}
         <span className="cursor" style={{ display: showCursor ? 'inline-block' : 'none' }}></span>
       </h1>
-      <p className="entry-page-subheader">Work with your brain! Schedule tech-skill questions on a personal calendar for maximum learning and retention, and ace your next interview! </p>
+      <p className="entry-page-subheader">Learn in favor of your brain! Schedule tech-skill questions on a personal calendar for maximum learning and retention, and ace your next interview! </p>
       <a href="/signup">
       <button className="entry-page-button">Join Today!</button>
       </a>
