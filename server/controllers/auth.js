@@ -7,11 +7,10 @@ import jwt from 'jsonwebtoken';
 export const register = async (req, res) => {
     try {
         console.log(req.body);
-        // destructure the name, email and password from the request body.
-        const { name, email, password } = req.body;
+        // destructure the email and password from the request body.
+        const { email, password } = req.body;
         
-        // validate username, email and password
-        if(!name) return res.status(400).json({ error: "Name is required" });
+        // validate email and password
         if(!password || password.length < 8){
             return res.status(400).json({ error: "Password is required and should be minimum 8 characters long" });
         }
@@ -27,7 +26,6 @@ export const register = async (req, res) => {
 
         // register the new user, and save it to the database.
         const user = new User({
-            name,
             email,
             password: hashedPass,
         });

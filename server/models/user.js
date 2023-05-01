@@ -4,12 +4,7 @@ import { Schema, model } from "mongoose";
 // set up a mongoose model
 const User = new Schema(
     {
-        // retrieve the user's name, email and password.
-        name: { 
-            type: String,
-            required: true,
-            trim: true,
-        },
+        // retrieve the user's email and password.
         email: {
             type: String,
             required: true,

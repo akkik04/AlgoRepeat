@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose"; 
 import cors from "cors"; 
 import cookieParser from "cookie-parser";
+import morgan from "morgan";
 import csrf from "csurf";
 import dotenv from "dotenv";
 dotenv.config();
@@ -16,6 +17,7 @@ const port = process.env.PORT || 8000; // port.
 // middlewares.
 app.use(cors());
 app.use(cookieParser());
+app.use(morgan("dev"));
 app.use(express.json({ limit: "50mb" }));
 
 // routing.
