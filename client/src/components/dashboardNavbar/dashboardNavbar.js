@@ -21,10 +21,13 @@ function DashboardNavbar() {
   }
 
   function getAuthToken() {
-    const authToken = document.cookie.split('; ').find(row => row.startsWith('authToken=')).split('=')[1];
-    return authToken;
+    const token = document.cookie.split('; ').find(row => row.startsWith('token='));
+    if (token) {
+      return token.split('=')[1];
+    }
+    return null;
   }
-
+  
   return (
     <nav className="navbar">
       <div className="navbar-left">

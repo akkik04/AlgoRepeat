@@ -23,7 +23,8 @@ function Login() {
       console.log(response.data);
 
       // store cookie returned from backend in the browser.
-      document.cookie = `authToken=${response.data.token}; path=/`;
+      document.cookie = `token=${response.data.token}; path=/`;
+
 
       history.push('/home');
     } catch (error) {

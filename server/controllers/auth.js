@@ -56,15 +56,15 @@ export const login = async (req, res) => {
             return res.status(400).json({ error: "Incorrect email or password!" });
         }
 
-        // generate jwt token and send it to the client for further requests.
+       // generate jwt token and send it to the client for further requests.
         const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
             expiresIn: "7d",
         }); 
-
+  
         // remove password from the response object and send it to the client via cookie.
         const { password: hashedPassword, ...userWithoutPassword } = user.toObject();
         res.cookie("token", token, { httpOnly: true });
-        res.cookie("token", token, { httpOnly: true });
+  
         return res.status(200).json({ message: "Login successful", user: userWithoutPassword });
 
     } catch (error) {
