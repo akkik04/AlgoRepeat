@@ -1,7 +1,8 @@
-import mongoose, { Schema } from 'mongoose';
+import mongoose from "mongoose"; 
+import { Schema, model } from "mongoose";
 
 // set up a mongoose model for tasks.
-const taskSchema = new Schema(
+const Task = new Schema(
   {
     title: {
       type: String,
@@ -50,4 +51,4 @@ const taskSchema = new Schema(
   { timestamps: true }
 );
 
-export default mongoose.model('Task', taskSchema);
+export default mongoose.model("Task", Task);
