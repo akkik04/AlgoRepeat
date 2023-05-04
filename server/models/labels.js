@@ -1,7 +1,7 @@
 import mongoose, { Schema } from 'mongoose';
 
 // set up a mongoose model for labels.
-const labelSchema = new Schema(
+const Label = new Schema(
   {
     name: {
       type: String,
@@ -25,4 +25,4 @@ const labelSchema = new Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("Label", labelSchema);
+export default mongoose.model("Label", Label);
