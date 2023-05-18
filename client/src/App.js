@@ -8,6 +8,8 @@ import About from './pages/about/about';
 import Signup from './pages/signup/signup';
 import Login from './pages/login/login';
 import Home from './pages/home/home';
+import Labels from './pages/labels/labels';
+import CalendarPage from './pages/calendar/calendar';
 import './App.css';
 
 const App = () =>{
@@ -37,6 +39,16 @@ const App = () =>{
                 <Route exact path="/home">
                     <DashboardNavbar />
                     <Home />
+                    <Footer />
+                </Route>
+                <Route exact path="/labels">
+                    <DashboardNavbar />
+                    <Labels />
+                    <Footer />
+                </Route>
+                <Route exact path="/calendar">
+                    <DashboardNavbar />
+                    <CalendarPage />
                     <Footer />
                 </Route>
           </Switch>

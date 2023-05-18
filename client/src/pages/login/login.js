@@ -25,7 +25,6 @@ function Login() {
       // store cookie returned from backend in the browser.
       document.cookie = `token=${response.data.token}; path=/`;
 
-
       history.push('/home');
     } catch (error) {
       console.error(error.response.data);

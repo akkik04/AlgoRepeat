@@ -43,6 +43,9 @@ function DashboardNavbar() {
           <a className="nav-link" href="/home">Home</a>
         </li>
         <li className="nav-item">
+          <a className="nav-link" href="/labels">Labels</a>
+        </li>
+        <li className="nav-item">
           <a className="nav-link" href="/calendar">Calendar</a>
         </li>
         <li className="nav-item">
