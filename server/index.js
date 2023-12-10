@@ -12,7 +12,7 @@ import allRoutes from "./routes/allRoutes.js";
 const app = express();
 const port = process.env.PORT || 8000; // port.
 
-// const csrfProtection = csrf({ cookie: true }); // csrf protection.
+const csrfProtection = csrf({ cookie: true }); // csrf protection.
 
 // middlewares.
 app.use(cors());
