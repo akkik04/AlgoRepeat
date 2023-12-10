@@ -60,7 +60,6 @@ export const login = async (req, res) => {
         const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
             expiresIn: "7d",
         });
-
         // remove password from the response object.
         const { password: hashedPassword, ...userWithoutPassword } = user.toObject();
 

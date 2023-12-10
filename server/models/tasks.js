@@ -32,15 +32,6 @@ const Task = new Schema(
       default: Date.now,
     },
 
-    // add a reference to the Label model.
-    labels: [
-      {
-        type: Schema.Types.ObjectId,
-        required: true,
-        ref: 'Label',
-      },
-    ],
-
     // add a reference to the User model.
     user: {
       type: Schema.Types.ObjectId,
