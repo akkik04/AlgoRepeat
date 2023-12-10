@@ -3,7 +3,7 @@ import { hashPassword } from "../utils/authUtils.js";
 import { compare } from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
-// function to register a new user
+// function to register a new user.
 export const register = async (req, res) => {
     try {
         console.log(req.body);
@@ -76,8 +76,8 @@ export const login = async (req, res) => {
 // function to logout a user.
 export const logout = (req, res) => {
     try {
-        // clear the cookie from the client.
-        res.clearCookie("token");
+        // remove the "Authorization" header from the response.
+        res.removeHeader("Authorization");
         res.status(200).json({ message: "Successfully Logged-Out" });
     } catch (error) {
         console.error(error);

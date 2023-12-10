@@ -8,7 +8,8 @@ const router = express.Router();
 // define routes for user-auth.
 router.post('/register', register);
 router.post('/login', login);
-router.get('/logout', logout);
+router.post('/logout', logout);
+router.get('/currentUser', authenticateUser, currentUser);
 
 // define routes for tasks.
 router.post('/makeTask', authenticateUser, createTask);
