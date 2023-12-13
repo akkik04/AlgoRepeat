@@ -7,7 +7,7 @@ export const Navbar = () => {
     return (
         <div className="py-4 px-16 flex justify-between items-center border-b border-gray-100 sm:px-4">
             <h2 className=" font-['Inter'] text-2xl font-bold">
-                ToDo
+                AlgoRepeat
             </h2>
             <div className="flex items-center gap-4 sm:hidden">
                 <div className='flex items-center gap-3'>
