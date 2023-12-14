@@ -47,12 +47,14 @@ const EntryPage = () => {
   return (
     <div className="min-h-screen">
       <EntryNavbar />
-      <Routes>
-        <Route path="/" element={<ScrollingText />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
+      <div className="mt-16"> {/* Add top margin to create space for the fixed navbar */}
+        <Routes>
+          <Route path="/" element={<ScrollingText />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </div>
       <Footer />
     </div>
   );
