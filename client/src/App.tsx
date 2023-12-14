@@ -1,23 +1,15 @@
 import React from 'react';
-// import Login from './views/auth/Login';
-import Entry from './views/entry/Entry'
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate
-} from "react-router-dom";
+import Entry from './views/Entry/Entry';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Entry />} />
-        {/* <Route path="/login" element={<Login />} /> */}
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="*" element={<Entry />} />
       </Routes>
     </Router>
-    );
+  );
 }
 
 export default App;
