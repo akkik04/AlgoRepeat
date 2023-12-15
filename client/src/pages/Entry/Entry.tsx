@@ -27,10 +27,10 @@ const ScrollingText = () => {
             if (index === 0) {
               clearInterval(newIntervalId);
             }
-          }, 110);
-        }, 10000); // 10-second delay
+          }, 70);
+        }, 9000); // 10-second delay
       }
-    }, 110);
+    }, 70);
 
     // Clear the interval when the component unmounts
     return () => clearInterval(intervalId);
