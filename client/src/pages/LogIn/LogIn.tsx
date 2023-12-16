@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
-import useLogIn from '../../hooks/useLogIn'; // Adjust the import path
+import useLogIn from '../../hooks/useLogIn';
+import { useNavigate } from 'react-router-dom';
+
 
 const LogIn = () => {
   const { email, setEmail, password, setPassword, successMessage, error, login } = useLogIn();
-  const primaryColor = '#000'; // Change this to the actual primary color
+  const navigate = useNavigate();
+  const primaryColor = '#000';
 
   const handleLogIn = async () => {
     await login(email, password);
@@ -14,6 +17,7 @@ const LogIn = () => {
   useEffect(() => {
     if (successMessage) {
       alert(successMessage);
+      navigate('/dashboard')
     }
   }, [successMessage]);
 

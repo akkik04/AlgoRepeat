@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
-import useSignUp from '../../hooks/useSignUp'; // Adjust the import path
+import useSignUp from '../../hooks/useSignUp';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
   const { email, setEmail, password, setPassword, successMessage, error, signup } = useSignUp();
-  const primaryColor = '#000'; // Change this to the actual primary color
+  const navigate = useNavigate();
+  const primaryColor = '#000';
 
   const handleSignUp = async () => {
     await signup(email, password);
@@ -14,6 +16,7 @@ const SignUp = () => {
   useEffect(() => {
     if (successMessage) {
       alert(successMessage);
+      navigate('/dashboard')
     }
   }, [successMessage]);
 
