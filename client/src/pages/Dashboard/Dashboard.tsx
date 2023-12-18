@@ -1,11 +1,14 @@
 import React from 'react';
+import { Navbar } from '../../components/Navbar/Navbar';
 
 const DashboardPage  = () => {
+
+  const entryLinks = [
+    { to: '/logout', label: 'Log Out' },
+  ];
   return (
-    <div>
-      <header>
-        <h1>Welcome to the Dashboard</h1>
-      </header>
+    <div className="min-h-screen">
+      <Navbar links={entryLinks} />
     </div>
   );
 };
