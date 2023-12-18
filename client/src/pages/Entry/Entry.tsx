@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { EntryNavbar } from '../../components/EntryNavbar/EntryNavbar';
+import { Navbar } from '../../components/Navbar/Navbar';
 import About from '../../pages/About/About';
 import SignUp from '../../pages/SignUp/SignUp';
 import Login from '../../pages/LogIn/LogIn';
@@ -44,9 +44,15 @@ const ScrollingText = () => {
 };
 
 const EntryPage = () => {
+  const entryLinks = [
+    { to: '/about', label: 'About' },
+    { to: '/signup', label: 'Sign Up' },
+    { to: '/login', label: 'Log In' },
+  ];
+
   return (
     <div className="min-h-screen">
-      <EntryNavbar />
+      <Navbar links={entryLinks} />
       <div className="mt-16">
         <Routes>
           <Route path="/" element={<ScrollingText />} />
