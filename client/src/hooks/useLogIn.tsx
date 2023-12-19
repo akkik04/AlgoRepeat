@@ -22,6 +22,7 @@ interface ErrorResponse {
         });
   
         if (response.status === 200) {
+          localStorage.setItem('accessToken', response.headers.authorization);
           setSuccessMessage(response.data.message);
         } else {
           setError(response.data.error);

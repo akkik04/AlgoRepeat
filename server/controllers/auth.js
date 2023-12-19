@@ -76,8 +76,11 @@ export const login = async (req, res) => {
 // function to logout a user.
 export const logout = (req, res) => {
     try {
-        // remove the "Authorization" header from the response.
-        res.removeHeader("Authorization");
+        // creating an expired token to clear the existing token on the client side.
+        const expiredToken = jwt.sign({ sub: 'expired' }, process.env.JWT_SECRET, { expiresIn: 0 });
+        
+        // Sending a new token or an empty token in the response.
+        res.setHeader("Authorization", `Bearer ${expiredToken}`);
         res.status(200).json({ message: "Successfully Logged-Out" });
     } catch (error) {
         console.error(error);
