@@ -52,7 +52,7 @@ const EntryPage = () => {
 
   return (
     <div className="min-h-screen">
-      <Navbar links={entryLinks} />
+      <Navbar links={entryLinks} isEntryPage={true} />
       <div className="mt-16">
         <Routes>
           <Route path="/" element={<ScrollingText />} />

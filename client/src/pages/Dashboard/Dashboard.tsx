@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar } from '../../components/Navbar/Navbar';
 
+
 const DashboardPage  = () => {
 
   const entryLinks = [
@@ -8,7 +9,7 @@ const DashboardPage  = () => {
   ];
   return (
     <div className="min-h-screen">
-      <Navbar links={entryLinks} />
+      <Navbar links={entryLinks} isEntryPage={false} />
     </div>
   );
 };
