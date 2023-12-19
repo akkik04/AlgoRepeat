@@ -31,7 +31,9 @@ const Task = new Schema(
       type: Date,
       default: Date.now,
     },
-
+    scheduledPracticeDates: {
+      type: [Date], // Array to store scheduled dates
+    },
     // add a reference to the User model.
     user: {
       type: Schema.Types.ObjectId,
@@ -41,5 +43,19 @@ const Task = new Schema(
   },
   { timestamps: true }
 );
+
+// Middleware to update scheduledPracticeDates before saving
+Task.pre('save', function (next) {
+  const currentDate = this.createdAt;
+  const scheduledDates = [];
+
+  // Calculate spaced repetition dates
+  for (let i = 1; i <= 35; i = i * 2) {
+    scheduledDates.push(new Date(currentDate.getTime() + i * 24 * 60 * 60 * 1000));
+  }
+
+  this.scheduledPracticeDates = scheduledDates;
+  next();
+});
 
 export default mongoose.model("Task", Task);

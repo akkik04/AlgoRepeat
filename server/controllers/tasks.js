@@ -20,12 +20,19 @@ export const createTask = async (req, res) => {
   }
 };
 
-// get all tasks
+// get all tasks.
 export const getTasks = async (req, res) => {
   try {
     const user = req.user._id;
     const tasks = await Task.find({ user }).exec();
-    return res.status(200).json({ tasks });
+
+    const formattedTasks = tasks.map(task => ({
+      title: task.title,
+      createdAt: task.createdAt,
+      scheduledPracticeDates: task.scheduledPracticeDates,
+    }));
+
+    return res.status(200).json({ tasks: formattedTasks });
   } catch (error) {
     console.error(error);
     return res.status(400).json({ error: 'Error occurred. Please try again' });
@@ -33,10 +40,11 @@ export const getTasks = async (req, res) => {
 };
 
 
+
 // update a task by name
 export const updateTask = async (req, res) => {
   try {
-    const taskName = req.query.taskName; // Use req.query to get query parameters
+    const taskName = req.query.taskName;
     const { title, status, isArchived } = req.body;
     const user = req.user._id;
 

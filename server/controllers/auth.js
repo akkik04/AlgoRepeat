@@ -62,7 +62,8 @@ export const login = async (req, res) => {
         });
         // remove password from the response object.
         const { password: hashedPassword, ...userWithoutPassword } = user.toObject();
-
+        
+        console.log("THE TOKEN RN IS: ", token);
         // send the token in the headers instead of using a cookie.
         res.setHeader("Authorization", `Bearer ${token}`);
         return res.status(200).json({ message: "Login successful", user: userWithoutPassword });
